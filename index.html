@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة حلقة وصل التعليمية — معهد نظم التجارة الإلكترونية بسوهاج</title>
+  <meta name="description" content="منصة حلقة وصل التعليمية التابعة للمعهد العالي لنظم التجارة الإلكترونية بسوهاج — ربط الطالب بالمحتوى الدراسي، الاختبارات التفاعلية، والتقييم الذاتي." />
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       رأس الصفحة وشريط التنقل العلوي
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-wrapper" onclick="app.showView('home')">
+        <img src="assets/images/logo.png" alt="شعار منصة حلقة وصل" class="brand-logo-img" onerror="this.src='halqa_wasl_logo_white.png'" />
+        <div class="brand-info">
+          <span class="brand-name">حلقة وصل</span>
+          <span class="brand-sub">معهد نظم التجارة الإلكترونية بسوهاج</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active" onclick="app.showView('home')"><i class="fa-solid fa-house"></i> الرئيسية</a>
+        <a href="#departments" class="nav-link" onclick="app.showView('departments')"><i class="fa-solid fa-sitemap"></i> الأقسام والفرق</a>
+        <a href="#subjects" class="nav-link" onclick="app.showView('subjects')"><i class="fa-solid fa-book-open"></i> المقررات الدراسية</a>
+        <a href="#ai-tutor" class="nav-link" onclick="app.showView('ai-tutor')"><i class="fa-solid fa-robot"></i> المساعد الذكي</a>
+        <a href="#stats" class="nav-link" onclick="app.showView('stats')"><i class="fa-solid fa-chart-simple"></i> الإحصاءات</a>
+        <a href="#admin" class="nav-link" onclick="app.showView('admin')"><i class="fa-solid fa-shield-halved"></i> لوحة النتائج</a>
+        <a href="#subjects" class="nav-link nav-cta" onclick="app.showView('subjects')"><i class="fa-solid fa-graduation-cap"></i> ابدأ الاختبار</a>
+      </nav>
+
+      <button class="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       الصفحة الرئيسية (Home View)
+       ======================================================================== -->
+  <main id="home-view" class="view-container active">
+    
+    <!-- الواجهة الترحيبية (Hero) -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <i class="fa-solid fa-award"></i> وزارة التعليم العالي — معهد نظم التجارة الإلكترونية بسوهاج
+          </div>
+          <h1 class="hero-title">
+            منصة <span class="highlight">«حلقة وصل»</span> التعليمية
+          </h1>
+          <p class="hero-subtitle">
+            «حلقة وصل بين الطالب والمعرفة» — المنصة الأكاديمية الرقمية المتكاملة لتيسير الوصول للمحاضرات المعتمدة، الملخصات العلمية، الاختبارات الذاتية، ومتابعة مستوى الطلاب بدقة وموثوقية.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="app.showView('subjects')">
+              <i class="fa-solid fa-book-bookmark"></i> استعراض المقررات والاختبارات
+            </button>
+            <button class="btn btn-secondary" onclick="app.showView('ai-tutor')">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> المساعد التعليمي الذكي
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-preview">
+            <div class="preview-header">
+              <span class="preview-badge">الفرقة الثانية (معتمد)</span>
+              <span class="preview-subject">العام الجامعي 2026-2027</span>
+            </div>
+            <div class="preview-details">
+              <div class="preview-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span><strong>تحليلات الأعمال:</strong> د. شيرين السيد عبدالله</span>
+              </div>
+              <div class="preview-item">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                <span><strong>إدارة اللوجستيات:</strong> الفصل الأول: ماهية الإمداد</span>
+              </div>
+              <div class="preview-item">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span><strong>المحاسبة المالية:</strong> قائمة الدخل والمركز المالي</span>
+              </div>
+              <div class="preview-item" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2);">
+                <i class="fa-solid fa-circle-check" style="color: var(--gold);"></i>
+                <span style="color: #ffffff;">بنك أسئلة واختبارات حقيقية تعمل 100%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- خطوات استخدام المنصة -->
+    <section class="section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">رحلة التعلم السريعة</span>
+          <h2 class="section-title">كيف تستفيد من منصة «حلقة وصل»؟</h2>
+          <p class="section-desc">خطوات مبسطة صُممت لتسهيل تحصيلك العلمي من أي جهاز وبأقل استهلاك للبيانات.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <div class="step-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="step-title">اختر فرقتك ومادتك</h3>
+            <p class="step-text">تصفح الهيكل الأكاديمي واختر الفرقة الثانية والتخصص لاستعراض المواد المتاحة للفصل الدراسي الحالي.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <h3 class="step-title">حمّل المحاضرة والملخص</h3>
+            <p class="step-text">اطّلع على شرائح المحاضرة الرسمية وملخص الأفكار الأساسية المعتمد والمستخرج مباشرة من ملفات الدكاترة.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
+            <h3 class="step-title">أجرِ الاختبار الفوري</h3>
+            <p class="step-text">أجب عن أسئلة الاختيار من متعدد والصح والخطأ، واكتشف درجتك وتفسير كل إجابة مع مرجعيتها الأكاديمية.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">04</span>
+            <div class="step-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="step-title">استعن بالمساعد الذكي</h3>
+            <p class="step-text">اسأل المساعد التعليمي عن أي مصطلح أو فكرة دراسية واستمتع بشرح فوري مجاني مبني على المنهج الدراسي.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم استعراض المقررات السريع -->
+    <section class="section-py" style="background-color: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">المحتوى الأكاديمي</span>
+          <h2 class="section-title">المقررات المتاحة للدراسة والاختبار</h2>
+          <p class="section-desc">مقررات الفرقة الثانية المعتمدة من ملفات المعهد الفعلية مع اختبارات ذاتية تفاعلية.</p>
+        </div>
+
+        <div class="subjects-grid" id="homeSubjectsGrid">
+          <!-- يتم ملؤها ديناميكياً بواسطة JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- شريط الإحصاءات الحية وعداد الزيارات -->
+    <section class="section-py">
+      <div class="container">
+        <div class="stats-banner">
+          <div class="counter-box">
+            <h3 id="statSubjectsCount">3</h3>
+            <p>مقررات معتمدة بالكامل</p>
+          </div>
+          <div class="counter-box">
+            <h3 id="statQuestionsCount">26</h3>
+            <p>سؤالاً في بنك الاختبارات</p>
+          </div>
+          <div class="counter-box">
+            <h3 id="statAttemptsCount">0</h3>
+            <p>محاولات اختبار حقيقية مسجلة</p>
+          </div>
+          <div class="counter-box">
+            <h3 id="statVisitsCount">1</h3>
+            <p>زيارات مسجلة للمنصة</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       واجهة الهيكل الأكاديمي والأقسام (Departments View)
+       ======================================================================== -->
+  <section id="departments-view" class="view-container section-py">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#home" onclick="app.showView('home')">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">الهيكل الأكاديمي والأقسام</span>
+      </div>
+
+      <div class="section-header">
+        <span class="section-tag">التنظيم الأكاديمي</span>
+        <h2 class="section-title">الهيكل الدراسي بمعهد نظم التجارة الإلكترونية</h2>
+        <p class="section-desc">المعهد ← القسم ← التخصص ← الفرقة الدراسية ← المقررات</p>
+      </div>
+
+      <div class="academic-browser-card">
+        <div class="browser-filters">
+          <div class="filter-group">
+            <label class="filter-label" for="academicYearSelect"><i class="fa-solid fa-calendar"></i> الفرقة الدراسية:</label>
+            <select id="academicYearSelect" class="select-control" onchange="app.filterByAcademicStructure()">
+              <option value="all">كافة الفرق الدراسية</option>
+              <option value="year-2" selected>الفرقة الثانية (المحتوى متاح ومكتمل)</option>
+              <option value="year-1">الفرقة الأولى (قيد التجهيز)</option>
+              <option value="year-3">الفرقة الثالثة (قيد التجهيز)</option>
+              <option value="year-4">الفرقة الرابعة (قيد التجهيز)</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label" for="academicDeptSelect"><i class="fa-solid fa-building-columns"></i> القسم الأكاديمي:</label>
+            <select id="academicDeptSelect" class="select-control" onchange="app.filterByAcademicStructure()">
+              <option value="all">كافة الأقسام</option>
+              <option value="dept-ecom">قسم نظم التجارة الإلكترونية</option>
+              <option value="dept-mis">قسم نظم المعلومات الإدارية</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="background-color: var(--bg-light); padding: 16px; border-radius: var(--radius-md); border-right: 4px solid var(--turquoise); font-size: 0.92rem;">
+          <p><strong><i class="fa-solid fa-circle-info" style="color: var(--turquoise);"></i> إشعار تنظيمي موثق:</strong> المواد الدراسية المعروضة حالياً بالمنصة (تحليلات الأعمال، إدارة اللوجستيات، المحاسبة وقوائم الدخل والمركز المالي) تتبع <strong>الفرقة الثانية</strong> وفق المحاضرات والملخصات الرسمية المستلمة، وسيتم فتح بقية الفرق فور اعتماد مقرراتها.</p>
+        </div>
+      </div>
+
+      <div class="subjects-grid" id="departmentsSubjectsGrid">
+        <!-- يتم ملؤها ديناميكياً -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       واجهة استعراض المقررات الدراسية (Subjects View)
+       ======================================================================== -->
+  <section id="subjects-view" class="view-container section-py">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#home" onclick="app.showView('home')">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">المقررات الدراسية</span>
+      </div>
+
+      <div class="section-header">
+        <span class="section-tag">دليل المقررات المعتمدة</span>
+        <h2 class="section-title">مقررات الفرقة الثانية — الفصل الأول</h2>
+        <p class="section-desc">اختر المادة للاطلاع على المحاضرات، تنزيل الـ PDF، وبدء الاختبار التفاعلي.</p>
+      </div>
+
+      <div class="subjects-grid" id="allSubjectsGrid">
+        <!-- يتم ملؤها ديناميكياً -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       واجهة تفاصيل المادة والفصول (Subject Detail View)
+       ======================================================================== -->
+  <section id="subject-detail-view" class="view-container section-py">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#home" onclick="app.showView('home')">الرئيسية</a>
+        <span class="separator">/</span>
+        <a href="#subjects" onclick="app.showView('subjects')">المقررات الدراسية</a>
+        <span class="separator">/</span>
+        <span class="current" id="detailSubjectBreadcrumb">تفاصيل المقرر</span>
+      </div>
+
+      <div class="subject-banner" id="subjectBanner">
+        <!-- يتم توليد محتوى البانر ديناميكياً -->
+      </div>
+
+      <div class="section-header" style="text-align: right; margin-bottom: 25px;">
+        <h3 style="font-size: 1.5rem; color: var(--primary-dark);">فصول ووحدات المقرر</h3>
+      </div>
+
+      <div id="chaptersContainer">
+        <!-- فصول المادة يتم حقنها هنا -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       نظام الاختبارات التفاعلية (Quiz View)
+       ======================================================================== -->
+  <section id="quiz-view" class="view-container section-py">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#home" onclick="app.showView('home')">الرئيسية</a>
+        <span class="separator">/</span>
+        <a href="#subjects" onclick="app.showView('subjects')">المقررات الدراسية</a>
+        <span class="separator">/</span>
+        <span class="current" id="quizBreadcrumb">الاختبار التفاعلي</span>
+      </div>
+
+      <div class="quiz-wrapper">
+        <!-- شريط رأس الاختبار -->
+        <div class="quiz-header-bar">
+          <div class="quiz-header-title" id="quizHeaderTitle">الاختبار التفاعلي</div>
+          <div class="quiz-timer">
+            <i class="fa-regular fa-clock"></i> <span id="quizTimerDisplay">15:00</span>
+          </div>
+        </div>
+
+        <!-- 1. استمارة بيانات الطالب قبل الاختبار -->
+        <div id="quizRegistrationForm" class="quiz-registration-box">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="width: 60px; height: 60px; background-color: var(--turquoise-light); color: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 14px;">
+              <i class="fa-solid fa-user-pen"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 6px;">بيانات الطالب قبل بدء الاختبار</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">تسجيل بياناتك لتوثيق نتيجتك في سجل تدريب المعهد وإصدار تقرير الأداء.</p>
+          </div>
+
+          <form onsubmit="app.startQuizExecution(event)">
+            <div class="form-group">
+              <label class="form-label" for="studentNameInput"><i class="fa-solid fa-user"></i> اسم الطالب ثلاثي أو رباعي <span style="color: var(--danger)">*</span>:</label>
+              <input type="text" id="studentNameInput" class="form-control" placeholder="أدخل اسمك كاملاً" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="studentYearSelect"><i class="fa-solid fa-graduation-cap"></i> الفرقة الدراسية:</label>
+              <select id="studentYearSelect" class="form-control">
+                <option value="الفرقة الثانية" selected>الفرقة الثانية (الفصل الدراسي الأول 2026-2027)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="studentSpecSelect"><i class="fa-solid fa-diagram-project"></i> القسم / التخصص:</label>
+              <select id="studentSpecSelect" class="form-control">
+                <option value="قسم نظم التجارة الإلكترونية — شعبة التجارة والتسويق" selected>قسم نظم التجارة الإلكترونية — شعبة التجارة والتسويق</option>
+                <option value="قسم نظم التجارة الإلكترونية — شعبة المحاسبة">قسم نظم التجارة الإلكترونية — شعبة المحاسبة</option>
+                <option value="قسم نظم المعلومات الإدارية">قسم نظم المعلومات الإدارية</option>
+              </select>
+            </div>
+
+            <div style="background-color: var(--bg-light); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 24px; font-size: 0.85rem; color: var(--text-muted); border: 1px dashed var(--border-color);">
+              <i class="fa-solid fa-shield-halved" style="color: var(--turquoise);"></i>
+              <strong>تنبيه أكاديمي:</strong> هذا الاختبار تجريبي لتقييم استيعابك للمنهج، الدرجة المحسوبة هي مؤشر تدريبي ولا تُعد بديلاً عن امتحانات الفصل الدراسي الرسمية.
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.05rem;">
+              <i class="fa-solid fa-play"></i> بدء الإجابة على الأسئلة الآن
+            </button>
+          </form>
+        </div>
+
+        <!-- 2. منطقة الإجابة على الأسئلة (أثناء الاختبار) -->
+        <div id="quizActiveContainer" style="display: none;">
+          <div class="quiz-nav-strip">
+            <div style="font-size: 0.92rem; font-weight: 700; color: var(--primary-dark);">
+              سؤال <span id="currentQuestionNumber">1</span> من <span id="totalQuestionsNumber">10</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="quizProgressBar"></div>
+            </div>
+            <div class="question-nav-bubbles" id="quizNavBubbles">
+              <!-- فقاعات الأسئلة يتم ملؤها هنا -->
+            </div>
+          </div>
+
+          <div class="question-card-inner">
+            <span class="question-citation-tag" id="qCitationTag">المحاضرة الرسمية</span>
+            <div class="question-text" id="qQuestionText">نص السؤال يظهر هنا...</div>
+
+            <div class="options-list" id="qOptionsList">
+              <!-- الاختيارات يتم حقنها ديناميكياً -->
+            </div>
+
+            <div class="quiz-footer-actions">
+              <button type="button" class="btn btn-outline-dark" id="btnPrevQuestion" onclick="app.prevQuestion()">
+                <i class="fa-solid fa-arrow-right"></i> السؤال السابق
+              </button>
+
+              <div style="display: flex; gap: 10px;">
+                <button type="button" class="btn btn-primary" id="btnNextQuestion" onclick="app.nextQuestion()">
+                  السؤال التالي <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button type="button" class="btn btn-orange" id="btnSubmitQuiz" onclick="app.submitQuizConfirm()" style="display: none;">
+                  <i class="fa-solid fa-check-double"></i> تسليم الاختبار النهائي
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. منطقة عرض النتائج والتحليل بعد التسليم -->
+        <div id="quizResultsContainer" class="results-card" style="display: none;">
+          <div class="score-circle-wrapper" id="scoreCircleWrapper">
+            <div class="score-circle-inner">
+              <span class="score-number" id="resultScoreValue">0/10</span>
+              <span class="score-percent" id="resultPercentValue">0%</span>
+            </div>
+          </div>
+
+          <h2 class="result-status-title" id="resultStatusTitle">نتيجة الاختبار</h2>
+          <p class="result-encouragement" id="resultEncouragementText">رسالة تقييم المستوى العلمي للطالب...</p>
+
+          <div class="results-stats-row">
+            <div class="result-stat-box">
+              <div class="result-stat-val" id="statCorrectCount" style="color: var(--success);">0</div>
+              <div class="result-stat-lbl">إجابات صحيحة</div>
+            </div>
+            <div class="result-stat-box">
+              <div class="result-stat-val" id="statWrongCount" style="color: var(--danger);">0</div>
+              <div class="result-stat-lbl">إجابات خاطئة</div>
+            </div>
+            <div class="result-stat-box">
+              <div class="result-stat-val" id="statTimeSpent">0 دقيقة</div>
+              <div class="result-stat-lbl">زمن الإجابة</div>
+            </div>
+          </div>
+
+          <!-- شريط توثيق حالة الحفظ بالسيرفر المركزي -->
+          <div class="save-status-banner saving" id="saveStatusBanner">
+            <i class="fa-solid fa-arrows-rotate fa-spin"></i> جارٍ التحقق من حفظ النتيجة في سجل المعهد...
+          </div>
+
+          <!-- أزرار الإجراءات بعد الاختبار -->
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+            <button class="btn btn-primary" onclick="app.exportStudentResultCSV()">
+              <i class="fa-solid fa-file-excel"></i> تنزيل تقرير النتيجة (Excel / CSV)
+            </button>
+            <button class="btn btn-outline-dark" onclick="window.print()">
+              <i class="fa-solid fa-print"></i> طباعة كشف الدرجة
+            </button>
+            <button class="btn btn-secondary" style="background-color: var(--primary-dark);" onclick="app.restartActiveQuiz()">
+              <i class="fa-solid fa-rotate-left"></i> إعادة الاختبار
+            </button>
+            <button class="btn btn-outline-dark" onclick="app.showView('subjects')">
+              <i class="fa-solid fa-arrow-right"></i> العودة للمقررات
+            </button>
+          </div>
+
+          <!-- تفاصيل الإجابات والشرح الأكاديمي المعتمد -->
+          <div class="questions-review-section">
+            <h3 style="font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 20px;">
+              <i class="fa-solid fa-magnifying-glass"></i> مراجعة الإجابات وتفسير كل سؤال من المحاضرة
+            </h3>
+            <div id="quizReviewCardsContainer">
+              <!-- بطاقات المراجعة تحقن هنا -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       المساعد التعليمي الذكي (AI Tutor View)
+       ======================================================================== -->
+  <section id="ai-tutor-view" class="view-container section-py">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#home" onclick="app.showView('home')">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">المساعد التعليمي الذكي</span>
+      </div>
+
+      <div class="section-header">
+        <span class="section-tag">ذكاء اصطناعي أكاديمي</span>
+        <h2 class="section-title">مساعد «حلقة وصل» التعليمي</h2>
+        <p class="section-desc">مساعد ذكي مدرب على مصطلحات ومفاهيم محاضرات المعهد لشرح الفصول والإجابة عن استفساراتك فوراً.</p>
+      </div>
+
+      <div class="ai-tutor-container">
+        <div class="ai-tutor-header">
+          <div class="ai-header-info">
+            <div class="ai-avatar"><i class="fa-solid fa-robot"></i></div>
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 2px;">مساعد المعهد الذكي</h3>
+              <span style="font-size: 0.8rem; color: #E2E8F0;"><i class="fa-solid fa-circle" style="color: #10B981; font-size: 0.6rem;"></i> متصل — وضع قاعدة المعرفة المحلية المعتمدة (مجاني 100%)</span>
+            </div>
+          </div>
+          <button class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;" onclick="app.openAiConfigModal()">
+            <i class="fa-solid fa-gear"></i> إعدادات الربط
+          </button>
+        </div>
+
+        <div class="ai-chat-window" id="aiChatWindow">
+          <div class="chat-bubble bot">
+            مرحباً بك يا بطل! أنا «مساعد حلقة وصل الذكي».<br />
+            تم تزويدي بكافة المفاهيم والمصطلحات من محاضرات الفرقة الثانية (تحليلات الأعمال، إدارة اللوجستيات، والمحاسبة المالية).<br />
+            يمكنك سؤالي عن أي مفهوم، أو طلب تلخيص لأي فصل دراسي، أو تجربة أسئلة تدريبية سريعة. كيف أساعدك اليوم؟
+          </div>
+        </div>
+
+        <!-- أزرار الأسئلة السريعة المجهزة مسبقاً -->
+        <div class="ai-quick-prompts">
+          <button class="prompt-chip" onclick="app.sendAiPrompt('ما هو الفرق بين التحليل وتحليلات الأعمال؟')">الفرق بين التحليل وتحليلات الأعمال؟</button>
+          <button class="prompt-chip" onclick="app.sendAiPrompt('ما هو دور محلل الأعمال ومسؤولياته؟')">دور ومسؤوليات محلل الأعمال؟</button>
+          <button class="prompt-chip" onclick="app.sendAiPrompt('ما هو أصل كلمة اللوجستيات وما هي أهدافها؟')">أصل كلمة اللوجستيات وأهدافها؟</button>
+          <button class="prompt-chip" onclick="app.sendAiPrompt('كيف نحسب صافي الربح في قائمة الدخل؟')">طريقة حساب صافي الربح؟</button>
+          <button class="prompt-chip" onclick="app.sendAiPrompt('اقترح علي سؤالاً للمراجعة من مقرر تحليلات الأعمال')">اقترح سؤال مراجعة سريع</button>
+        </div>
+
+        <div class="ai-input-bar">
+          <input type="text" id="aiUserInput" placeholder="اكتب سؤالك هنا بخصوص المنهج الدراسي..." onkeydown="if(event.key==='Enter') app.handleAiSendMessage()" />
+          <button class="btn btn-primary" onclick="app.handleAiSendMessage()">
+            <i class="fa-solid fa-paper-plane"></i> إرسال
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       لوحة المسؤول المركزي وإدارة النتائج (Admin View)
+       ======================================================================== -->
+  <section id="admin-view" class="view-container section-py">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#home" onclick="app.showView('home')">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">لوحة المسؤول ومتابعة النتائج</span>
+      </div>
+
+      <div class="section-header">
+        <span class="section-tag">الإدارة الأكاديمية</span>
+        <h2 class="section-title">سجل نتائج واختبارات الطلاب</h2>
+        <p class="section-desc">متابعة دقيقة لمستوى استيعاب الطلاب وتصدير التقارير لمسؤولي المعهد والدكاترة.</p>
+      </div>
+
+      <div class="admin-card">
+        <!-- بطاقات المؤشرات الأساسية KPIs -->
+        <div class="admin-kpis-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon blue"><i class="fa-solid fa-user-check"></i></div>
+            <div class="kpi-data">
+              <h3 id="adminKpiTotalAttempts">0</h3>
+              <span>إجمالي محاولات الاختبارات</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon green"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="kpi-data">
+              <h3 id="adminKpiAverageScore">0%</h3>
+              <span>متوسط الدرجات العام</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon gold"><i class="fa-solid fa-trophy"></i></div>
+            <div class="kpi-data">
+              <h3 id="adminKpiPassRate">0%</h3>
+              <span>نسبة الاجتياز (≥ 60%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- أدوات التصفية والبحث والتصدير -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 14px;">
+          <div style="display: flex; gap: 12px; flex-grow: 1; max-width: 500px;">
+            <input type="text" id="adminSearchInput" class="form-control" placeholder="ابحث باسم الطالب أو المادة..." oninput="app.renderAdminAttemptsTable()" />
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-primary" onclick="app.exportAllAttemptsCSV()">
+              <i class="fa-solid fa-file-csv"></i> تصدير السجل بالكامل (Excel CSV)
+            </button>
+            <button class="btn btn-outline-dark" onclick="app.clearAttemptsDataConfirm()">
+              <i class="fa-solid fa-trash"></i> تصفير السجل التجريبي
+            </button>
+          </div>
+        </div>
+
+        <!-- جدول المحاولات -->
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>التاريخ والوقت</th>
+                <th>اسم الطالب</th>
+                <th>الفرقة</th>
+                <th>التخصص</th>
+                <th>المادة والاختبار</th>
+                <th>الدرجة</th>
+                <th>النسبة</th>
+                <th>الحالة</th>
+              </tr>
+            </thead>
+            <tbody id="adminAttemptsTableBody">
+              <!-- تحقن الصفوف برمجياً -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- إشعار الأمان والخصوصية -->
+        <div style="margin-top: 25px; padding: 16px; background-color: var(--bg-light); border-radius: var(--radius-md); font-size: 0.88rem; color: var(--text-muted); border-right: 4px solid var(--primary-dark);">
+          <strong><i class="fa-solid fa-lock" style="color: var(--primary-dark);"></i> معايير الأمان والخصوصية:</strong> هذه اللوحة تعرض النتائج المخزنة على المتصفح الحالي أو المربوطة بجدول <code>Google Sheets</code> للمسؤول. في البيئة الموزعة لا يتم نشر بيانات الطلاب للعامة، وإنما تُرسل عبر قناة آمنة ومشفرة إلى جدول Google المحمي بصلاحيات إدارة المعهد.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       تذييل الصفحة (Footer)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>منصة «حلقة وصل»</h4>
+          <p>
+            مبادرة تعليمية رقمية تابعة لـ <strong>المعهد العالي لنظم التجارة الإلكترونية بسوهاج</strong> (وزارة التعليم العالي)، تهدف إلى ردم الفجوة بين المحتوى الأكاديمي والتحصيل الطلابي عبر حلول التقييم التفاعلي والذكاء الاصطناعي.
+          </p>
+          <div style="font-size: 0.88rem; color: var(--gold);">
+            «حلقة وصل بين الطالب والمعرفة»
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#home" onclick="app.showView('home')"><i class="fa-solid fa-chevron-left"></i> الرئيسية</a></li>
+            <li><a href="#departments" onclick="app.showView('departments')"><i class="fa-solid fa-chevron-left"></i> الأقسام الأكاديمية</a></li>
+            <li><a href="#subjects" onclick="app.showView('subjects')"><i class="fa-solid fa-chevron-left"></i> مقررات الفرقة الثانية</a></li>
+            <li><a href="#ai-tutor" onclick="app.showView('ai-tutor')"><i class="fa-solid fa-chevron-left"></i> المساعد الذكي</a></li>
+            <li><a href="#admin" onclick="app.showView('admin')"><i class="fa-solid fa-chevron-left"></i> لوحة نتائج الاختبارات</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>المقر والمعهد</h4>
+          <p>
+            <i class="fa-solid fa-location-dot" style="color: var(--turquoise);"></i> محافظة سوهاج — جمهورية مصر العربية.<br />
+            <i class="fa-solid fa-graduation-cap" style="color: var(--turquoise);"></i> المعهد العالي لنظم التجارة الإلكترونية بسوهاج.<br />
+            <i class="fa-solid fa-server" style="color: var(--turquoise);"></i> الاستضافة: GitHub Pages (مجاني 100%).
+          </p>
+          <div style="margin-top: 10px;">
+            <span class="preview-badge" style="background-color: rgba(255,255,255,0.1); color: #ffffff; border: 1px solid rgba(255,255,255,0.2);">نسخة المسابقة 2026-2027</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 منصة «حلقة وصل» — جميع الحقوق محفوظة للمعهد العالي لنظم التجارة الإلكترونية بسوهاج.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ملفات البيانات والتشغيل المنظمة -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
